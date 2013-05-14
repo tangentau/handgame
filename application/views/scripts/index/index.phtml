@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>hgg</title>
+		<meta name="generator" content="nanoc"/>
+	</head>
+	<body>
+		<table>
+		<?php foreach ($this->entries as $entry): ?>
+			<tr>
+				<td><?php echo $entry->name ?></td>
+				<td><?php echo $entry->order ?></td>
+			</tr>
+		<?php endforeach ?>
+		</table>
+	</body>
+</html>

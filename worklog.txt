@@ -1,0 +1,66 @@
+
+1) http://framework.zend.com/manual/1.12/ru/learning.quickstart.create-model.html
+
+C:\xampp\htdocs\handgame>
+
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat configure db-adapter "adapter=Pdo_Mysql&host=localhost&username=handgame&password=handgame&dbname=handgame" production
+
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat  configure db-adapter "adapter=Pdo_Mysql&host=localhost&username=handgame&password=handgame&dbname=handgame-test" testing
+
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat  configure db-adapter "adapter=Pdo_Mysql&host=localhost&username=handgame&password=handgame&dbname=handgame-dev" development
+
+2) http://sky2high.net/2010/09/zend-framework-%D0%B8%D0%B4%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D0%B2%D0%B5%D0%B1-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%87-1-%D0%B8%D0%B7-2/
+
+--
+-- Table structure for table `alphabet`
+--
+
+CREATE TABLE IF NOT EXISTS `alphabet` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `language_id` int(10) unsigned NOT NULL,
+  `order` int(10) unsigned NOT NULL,
+  `name` char(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `alphabet`
+--
+
+INSERT INTO `alphabet` (`id`, `language_id`, `order`, `name`) VALUES
+(1, 2, 1, 'А');
+INSERT INTO `alphabet` (`id`, `language_id`, `order`, `name`) VALUES
+(2, 2, 5, 'Д');
+INSERT INTO `alphabet` (`id`, `language_id`, `order`, `name`) VALUES
+(3, 2, 6, 'Е');
+
+
+3)
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat create db-table Alphabet alphabet
+
+4) 
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat create model AlphabetMapper
+
+C:\xampp\ZendFramework-1.12.3\bin\zf.bat create model Alphabet
+
+5
+
+C:\Windows\System32\Drivers\etc\hosts :
+
+127.0.0.1       hdd.local
+
+6)
+
+<VirtualHost *:80>
+    ServerName hdd.local
+    DocumentRoot C:\xampp\htdocs\handgame\public
+ 
+    SetEnv APPLICATION_ENV "development"
+ 
+    <Directory C:\xampp\htdocs\handgame\public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
